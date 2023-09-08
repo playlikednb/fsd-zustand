@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  min-height: 5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-base-03);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardStatus {
+  font-size: small;
+  background: var(--color-base-03);
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+.cardStatus__PLANNED {
+  background: var(--color-base-03);
+}
+.cardStatus__ONGOING {
+  background: var(--color-ongoing);
+}
+.cardStatus__DONE {
+  background: var(--color-done);
+}

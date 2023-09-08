@@ -1,7 +1,13 @@
 import { useState } from 'react'
 
+import { CardsPage } from '@/pages/cards'
+
 function App() {
-  return <div className="App">Test tewglw,elf, wle,flqw,lf ,qw;l</div>
+  return (
+    <div className="App">
+      <CardsPage />
+    </div>
+  )
 }
 
 export default App

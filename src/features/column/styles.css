@@ -1,0 +1,9 @@
+.column {
+  background: #fff;
+  min-height: 20rem;
+  width: 33%;
+  max-width: 22.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
