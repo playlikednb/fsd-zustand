@@ -1,0 +1,18 @@
+:root {
+  --color-text-primary: rgba(0, 0, 0, 0.8);
+  --color-base-01: #333;
+  --color-base-02: #222;
+  --color-base-03: #ccc;
+  --color-base-04: #f6f7f8;
+  --color-ongoing: #98c1d9;
+  --color-done: #ee6c4d;
+
+  font-family: -apple-system, 'system-ui', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+}
+
+body {
+  background: var(--color-base-04);
+  margin: 0;
+  min-height: 100vh;
+}
