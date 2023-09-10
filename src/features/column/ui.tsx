@@ -4,7 +4,7 @@ import React from 'react'
 import { Card } from '@/entities/card'
 
 import './styles.css'
-import type { ColumnProps } from './types'
+import type { ColumnProps } from './model/types'
 
 export const Column = ({ status }: ColumnProps) => {
   return (

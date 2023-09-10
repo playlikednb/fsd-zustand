@@ -4,7 +4,7 @@ import { Column } from '@/features/column'
 import { StatusEnum } from '@/shared/config'
 
 import './styles.css'
-import type { CardBoardProps } from './types'
+import type { CardBoardProps } from './model/types'
 
 export const CardBoard = ({}: CardBoardProps) => {
   return (

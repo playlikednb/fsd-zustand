@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 
 import './styles.css'
-import type { CardProps } from './types'
+import type { CardProps } from './model/types'
 
 const STATUS = 'DONE'
 
