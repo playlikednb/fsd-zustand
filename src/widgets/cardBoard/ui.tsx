@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Column } from '@/features/column'
 import { StatusEnum } from '@/shared/config'
 

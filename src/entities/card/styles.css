@@ -7,11 +7,31 @@
   padding: 0.5rem;
   border-radius: 8px;
   border: 1px solid var(--color-base-03);
+  margin-bottom: 0.5rem;
 }
 
 .cardFooter {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.cardFooter img {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.cardFooter img:hover {
+  opacity: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: end;
+}
+
+.cardId {
+  font-size: x-small;
 }
 
 .cardStatus {
