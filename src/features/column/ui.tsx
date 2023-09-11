@@ -3,15 +3,16 @@ import { shallow } from 'zustand/shallow'
 // TODO: TEMP!
 import useStore from '@/features/column/model/store'
 import { Card } from '@/entities/card'
-import { StatusEnum } from '@/shared/config'
 
 import './styles.css'
 import type { ColumnProps } from './model/types'
 import { useState } from 'react'
+import classNames from 'classnames'
 
 export const Column = ({ status }: ColumnProps) => {
-  const [text, setText] = useState('')
-  const [open, setOpen] = useState(false)
+  const [text, setText] = useState<string>('')
+  const [open, setOpen] = useState<boolean>(false)
+  const [dropReady, setDropReady] = useState<boolean>(false)
 
   const cards = useStore(
     (store) => store.cards.filter((card) => card.status === status),
@@ -19,9 +20,29 @@ export const Column = ({ status }: ColumnProps) => {
   )
 
   const onAddCard = useStore((store) => store.addCard)
+  const setDraggedCardId = useStore((store) => store.setDraggedCardId)
+  const moveCard = useStore((store) => store.moveTask)
+  const draggedCardId = useStore((store) => store.draggedCardId)
 
   return (
-    <div className="column">
+    <div
+      className={classNames('column', { dropReady })}
+      onDragOver={(e) => {
+        e.preventDefault()
+        setDropReady(true)
+      }}
+      onDragLeave={(e) => {
+        e.preventDefault()
+        setDropReady(false)
+      }}
+      onDrop={(e) => {
+        e.preventDefault()
+        if (!draggedCardId) return null
+        moveCard(draggedCardId, status)
+        setDraggedCardId(null)
+        setDropReady(false)
+      }}
+    >
       <div className="columnHeader">
         <p>{status}</p>
         <button onClick={() => setOpen(true)}>Add</button>

@@ -9,9 +9,10 @@ import type { CardProps } from './model/types'
 export const Card = ({ id, title, status }: CardProps) => {
   // TODO: MOVE LOGIC?
   const onDeleteCard = useStore((store) => store.deleteCard)
+  const setDraggedCardId = useStore((store) => store.setDraggedCardId)
 
   return (
-    <div className="card" draggable>
+    <div className="card" draggable onDragStart={() => setDraggedCardId(id)}>
       <div className="cardHeader">
         <div className="cardId">{id}</div>
       </div>
