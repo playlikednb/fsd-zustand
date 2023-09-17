@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import classNames from 'classnames'
 import { shallow } from 'zustand/shallow'
 
 // TODO: TEMP!
@@ -6,8 +8,6 @@ import { Card } from '@/entities/card'
 
 import './styles.css'
 import type { ColumnProps } from './model/types'
-import { useState } from 'react'
-import classNames from 'classnames'
 
 export const Column = ({ status }: ColumnProps) => {
   const [text, setText] = useState<string>('')
