@@ -1,21 +1,18 @@
-import { StatusEnum } from '@/shared/config'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
-import { Store } from './types'
+import type { Store } from './types'
 
 const useStore = create<Store>()(
   persist(
     devtools((set) => ({
-      cards: [
-        { id: Date.now(), title: 'TestTask', status: StatusEnum.ONGOING },
-      ],
+      cards: [],
       draggedCardId: null,
 
-      addCard: (title, status) =>
+      addCard: (title, status, id) =>
         set(
           (store) => ({
-            cards: [...store.cards, { title, status, id: Date.now() }],
+            cards: [...store.cards, { title, status, id: id ?? Date.now() }],
           }),
           false,
           'addCard'
